@@ -2,9 +2,9 @@
 using GDWeave.Godot.Variants;
 using GDWeave.Modding;
 
-namespace CatSounds;
+namespace VoiceTrainedSpecies;
 
-public class GrowlPatch : IScriptMod
+public class CatWhinePatch : IScriptMod
 {
     public bool ShouldRun(string path) => path == "res://Scenes/Entities/Player/player.gdc";
 
@@ -12,9 +12,9 @@ public class GrowlPatch : IScriptMod
     {
         foreach (var token in tokens)
         {
-            if (token is ConstantToken { Value: StringVariant { Value: "growl_dog" } } identifierToken)
+            if (token is ConstantToken { Value: StringVariant { Value: "whine_dog" } } identifierToken)
             {
-                identifierToken.Value = new StringVariant("growl_cat");
+                identifierToken.Value = new StringVariant("whine_cat");
             }
             yield return token;
         }
